@@ -1,10 +1,12 @@
-"use client"
+import Collections from "./Collections"
 
 export default function Home() {
+
+
  
   return (
     <div>
-      WELCOME!
+      <Collections/>
     </div>
   )
 }
