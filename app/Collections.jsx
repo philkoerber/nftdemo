@@ -1,31 +1,32 @@
+"use client"
+
+import { Grid, GridItem, Image } from '@chakra-ui/react';
 import React from 'react';
+import Slideshow from './Slideshow';
 
 
-const fetchCollections = async () => {
-    const options = {
-  method: 'GET',
-  headers: {accept: 'application/json', 'X-API-KEY': process.env.API_KEY}
-};
+function Collections({ collections }) {
+    
 
-    const res = await fetch('https://api.opensea.io/api/v1/collections?offset=0&limit=300', options)
-    const data = await res.json();
-    return data;
-}
-
-async function Collections() {
-
-    const data = await fetchCollections();
-    console.log(data.collections)
-
-    return (
-        <div>
-            {data.collections.map((result) => {
-                if (result.slug) {
-                    return <h1>{result.slug}</h1>     
-                }
-            else{return null}})}
-        </div>
-    );
+  return (
+    <Grid templateColumns="repeat(5, 1fr)" gap={10}>
+          {collections.map((collection) => {
+          if(collection.nfts?.length>4){
+              return(
+              <GridItem
+                      key={collection.slug}
+                      w={"200px"}
+                      h={"200px"}
+                      bg={"blue.500"}
+                    overflow={"hidden"}>
+                      <Slideshow collection={collection}/>
+                      
+                  </GridItem>)
+              }
+            else return null
+      })}
+    </Grid>
+  );
 }
 
 export default Collections;

@@ -8,7 +8,6 @@ const fetchByCollection = async (collection) => {
 
     const res = await fetch(`https://api.opensea.io/v2/collection/${collection}/nfts?limit=20`, options)
     const data = await res.json();
-    console.log("your data: ", data)
     return data;
 }
 
@@ -17,6 +16,7 @@ const fetchByCollection = async (collection) => {
 async function SearchResults({params: {searchTerm}}) {
 
     const searchResults = await fetchByCollection(searchTerm)
+    
     return (
         <div>
             You searched for: {searchTerm}
