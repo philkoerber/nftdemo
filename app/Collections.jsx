@@ -15,10 +15,12 @@ function Collections({ collections }) {
               return(
               <GridItem
                       key={collection.slug}
-                      w={"200px"}
-                      h={"200px"}
-                      bg={"blue.500"}
-                    overflow={"hidden"}>
+                      w={"300px"}
+                      h={"300px"}
+                      rounded={'10px'}
+                      overflow={"hidden"}
+                      shadow={"xl"}
+                  >
                       <Slideshow collection={collection}/>
                       
                   </GridItem>)

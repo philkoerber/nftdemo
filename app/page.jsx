@@ -17,7 +17,7 @@ const fetchByCollection = async (collection) => {
   headers: {accept: 'application/json', 'X-API-KEY': process.env.API_KEY}
 };
 
-    const res = await fetch(`https://api.opensea.io/v2/collection/${collection}/nfts?limit=30`, options)
+    const res = await fetch(`https://api.opensea.io/v2/collection/${collection}/nfts?limit=20`, options)
     const data = await res.json();
     return data;
 }
