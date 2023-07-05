@@ -26,13 +26,16 @@ function Collections({ collections }) {
                 >
                   <Box
                     position={"absolute"}
-                    w={"300px"}
+                  w={"300px"}
+                  h={"5%"}
                     zIndex={100}
                     bgGradient='linear(to-b, gray.800, transparent)'
                   roundedTop={"10px"}
                     p={"2"}>
                   <Text
-                    color={"white"}>
+                    color={"white"}
+                    >
+                    
                     {collection.slug}
                   </Text>
                     </Box>
