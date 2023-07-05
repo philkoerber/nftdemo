@@ -47,7 +47,6 @@ function Slideshow({ collection }) {
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
-                    borderRadius: "10px"
                 }}
             
                 animate={
@@ -57,7 +56,8 @@ function Slideshow({ collection }) {
                             scale: 1,
                             zIndex: isWaitingPicture ? 5 : 10,
                             width: "100%",
-                            height: "100%"
+                            height: "100%",
+                            borderRadius: "10px"
                         }
                         :
                         {
@@ -68,7 +68,10 @@ function Slideshow({ collection }) {
                             top: "40%",
                             width: "100%",
                             height: "100%",
-                            transition: isLastPicture ? { duration: 0 } : { duration: 2, ease: "easeInOut" }
+                            borderRadius: "100px",
+                            transition: isLastPicture ? { duration: 0 } : { duration: 2, ease: "easeInOut" },
+                            borderWidth: "10px"
+                            
                         }
                 }
                 transition={{ duration: 1.2, ease: "easeInOut" }}
